@@ -103,11 +103,17 @@ h2 {
 
 .emails {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 18px;
+}
+
+.carte {
+    text-align: center; /* Centre le contenu horizontalement */
 }
 
 .carte img {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
+	width: 400px;
     margin-top: 20px;
+	border-radius: 5%; /* Transforme l'image en cercle */
 }
