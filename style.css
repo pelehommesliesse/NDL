@@ -111,9 +111,8 @@ h2 {
 }
 
 .carte img {
-    /* width: 100%; */
+    width: 50%;
     height: auto;
-	width: 400px;
     margin-top: 20px;
 	border-radius: 5%; /* Transforme l'image en cercle */
 }
