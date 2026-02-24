@@ -1,98 +1,113 @@
-body{
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background:#f6f4ef;
-  margin:0;
-  color:#333;
+body {
+    font-family: 'EB Garamond', serif;
+    background:#f6f4ef;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-.container{
-  max-width:700px;
-  margin:40px auto;
-  padding:20px;
+.affiche {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4e9d8;
+    border: 1px solid #ddd;
 }
 
-h1{
-  text-align:center;
-  color:#6b4f2a;
-  margin-bottom:5px;
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.subtitle{
-  text-align:center;
-  color:#9a8b6a;
-  margin-bottom:30px;
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+	border-radius: 5%; /* Transforme l'image en cercle */
 }
 
-.card{
-  background:white;
-  padding:25px;
-  margin-bottom:20px;
-  border-radius:10px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
 
-.card h2{
-  margin-top:0;
-  color:#6b4f2a;
+.texte-intro {
+    font-style: italic;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
 }
 
-label{
-  display:block;
-  margin-top:15px;
-  font-weight:600;
+h1 {
+    color: #8B4513;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-input, select{
-  width:100%;
-  padding:12px;
-  margin-top:5px;
-  border-radius:6px;
-  border:1px solid #ddd;
-  font-size:15px;
+h2 {
+    color: #555;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-input:focus, select:focus{
-  outline:none;
-  border-color:#b59a6a;
-  box-shadow:0 0 0 2px rgba(181,154,106,0.2);
+.acte {
+    background-color: #8B4513;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 5px;
 }
 
-.radio{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:15px;
-  cursor:pointer;
+.missions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
 }
 
-.radio input[type="radio"]{
-  width:auto;
-  margin:0;
-  transform:scale(1.2);
+.mission {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #8B4513;
 }
 
-.option{
-  display:none;
-  margin-top:10px;
-  padding:15px;
-  background:#faf8f2;
-  border-radius:6px;
+.mission img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
 }
 
-.btn{
-  display:block;
-  width:100%;
-  padding:16px;
-  background:#6b4f2a;
-  color:white;
-  border:none;
-  border-radius:8px;
-  font-size:18px;
-  margin-top:20px;
-  cursor:pointer;
-  transition:0.2s;
+.contact {
+    text-align: center;
+    margin: 20px 0;
 }
 
-.btn:hover{
-  background:#8b6a3f;
+.qr-code img {
+    width: 100px;
+    height: 100px;
+}
+
+.lien-direct a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.emails {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.carte img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
