@@ -1,0 +1,98 @@
+body{
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background:#f6f4ef;
+  margin:0;
+  color:#333;
+}
+
+.container{
+  max-width:700px;
+  margin:40px auto;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+  color:#6b4f2a;
+  margin-bottom:5px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#9a8b6a;
+  margin-bottom:30px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  margin-bottom:20px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card h2{
+  margin-top:0;
+  color:#6b4f2a;
+}
+
+label{
+  display:block;
+  margin-top:15px;
+  font-weight:600;
+}
+
+input, select{
+  width:100%;
+  padding:12px;
+  margin-top:5px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  font-size:15px;
+}
+
+input:focus, select:focus{
+  outline:none;
+  border-color:#b59a6a;
+  box-shadow:0 0 0 2px rgba(181,154,106,0.2);
+}
+
+.radio{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+  cursor:pointer;
+}
+
+.radio input[type="radio"]{
+  width:auto;
+  margin:0;
+  transform:scale(1.2);
+}
+
+.option{
+  display:none;
+  margin-top:10px;
+  padding:15px;
+  background:#faf8f2;
+  border-radius:6px;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  padding:16px;
+  background:#6b4f2a;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  margin-top:20px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.btn:hover{
+  background:#8b6a3f;
+}

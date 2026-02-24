@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Inscription au pèlerinage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Inscription au pèlerinage</h1>
+  <p class="subtitle">Rejoignez la marche fraternelle</p>
+
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSfsMtgXoadCMK9GfAxzO4ZfUf0HqOm_z9epkNW_Xv6ycSLLpw/formResponse" method="POST">
+
+    <div class="card">
+      <h2>Vos coordonnées</h2>
+
+      <label>Prénom</label>
+      <input type="text" name="entry.1075521708" required>
+
+      <label>Nom</label>
+      <input type="text" name="entry.148681185" required>
+
+      <label>Email</label>
+      <input type="email" name="entry.40382803" required>
+
+      <label>Téléphone</label>
+      <input type="text" name="entry.498310300">
+    </div>
+
+    <div class="card">
+      <h2>Votre inscription</h2>
+
+      <label class="radio">
+        <input type="radio" name="choix" value="existant" onclick="showOption('existant')">
+        <span>Je souhaite rejoindre un chapitre existant</span>
+      </label>
+
+      <div id="existant" class="option">
+        <select name="entry.1027741431">
+          <option value="">Choisir un chapitre</option>
+          <option>Amiens</option>
+          <option>Compiègne</option>
+          <option>Soissons</option>
+          <option>Saint-Quentin</option>
+        </select>
+        <input type="hidden" name="entry.1763880818" value="Oui">
+      </div>
+
+      <label class="radio">
+        <input type="radio" name="choix" value="autre" onclick="showOption('autre')">
+        <span>Les chapitres actuels sont trop loin de mon domicile, peut-être un nouveau chapitre sera créé vers</span>
+      </label>
+
+      <div id="autre" class="option">
+        <input type="text" name="entry.1985455406" placeholder="Votre ville">
+        <input type="hidden" name="entry.1825981147" value="Oui">
+      </div>
+
+      <label class="radio">
+        <input type="radio" name="choix" value="nouveau" onclick="showOption('nouveau')">
+        <span>Je souhaite me lancer dans la grande aventure et créer un nouveau chapitre</span>
+      </label>
+
+      <div id="nouveau" class="option">
+        <input type="text" name="entry.981341244" placeholder="Lieu du chapitre">
+        <input type="hidden" name="entry.562928516" value="Oui">
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn">Je m’inscris</button>
+
+  </form>
+</div>
+
+<script>
+function showOption(id){
+  document.querySelectorAll('.option').forEach(el=>el.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+</script>
+
+</body>
+</html>
