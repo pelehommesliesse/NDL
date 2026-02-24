@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="affiche">
         <div class="header">
@@ -63,11 +64,40 @@
             <div class="lien-direct">
                 <a href="./inscription.html" target="_blank">INCRIVEZ-VOUS &nbsp&nbsp<i class="fa-solid fa-arrow-pointer"></i></a>
             </div>
-            <div class="emails">
-                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:pele.hommes.liesse@gmail.com">pele.hommes.liesse@gmail.com</a></p>
-            </div>
         </div>
 		
     </div>
+
+	<script>
+		// Récupère l'image et la modale
+		const carteImg = document.querySelector('.carte img');
+		const modal = document.getElementById('modal');
+		const modalImg = document.getElementById('modal-image');
+		const closeBtn = document.querySelector('.close');
+
+		// Quand on clique sur l'image
+		carteImg.onclick = function() {
+			modal.style.display = 'block';
+			modalImg.src = this.src;
+		};
+
+		// Quand on clique sur le bouton de fermeture
+		closeBtn.onclick = function() {
+			modal.style.display = 'none';
+		};
+
+		// Quand on clique en dehors de l'image
+		modal.onclick = function(event) {
+			if (event.target === modal) {
+				modal.style.display = 'none';
+			}
+		};
+	</script>
+
+	<div id="modal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="modal-image">
+	</div>
+
 </body>
 </html>
