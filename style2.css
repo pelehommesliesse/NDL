@@ -255,12 +255,14 @@ h2 {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto;
+    margin: 2% auto;
     padding: 20px;
     border-radius: 10px;
     width: 80%;
-    max-width: 600px;
+    max-width: 700px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	max-height: 70vh; /* Limite la hauteur maximale de la modale à 70% de la hauteur de l'écran */
+    overflow-y: auto; /* Active la barre de défilement verticale si nécessaire */
 }
 
 .close-modal {
@@ -269,8 +271,10 @@ h2 {
     font-weight: bold;
     cursor: pointer;
 }
-/* Désactive le retournement pour la carte avec le texte long */
-.mission-longue .mission-card {
+/* Désactive le retournement pour les cartes longues */
+.mission-longue .mission-card,
+.mission-longue-2 .mission-card {
     transform: none !important;
     -webkit-transform: none !important;
 }
+
