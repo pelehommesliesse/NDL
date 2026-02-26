@@ -86,12 +86,6 @@ h2 {
     height: 300px; /* Ajuste cette hauteur selon tes besoins */
 }
 
-/* Style pour les smartphones */
-@media (max-width: 600px) {
-    .mission {
-        height: 500px;
-    }
-	
 /* Carte de mission */
 .mission-card {
     width: 100%;
@@ -132,6 +126,12 @@ h2 {
 	color: white;
 }
 
+/* Style pour les smartphones : 1 colonne */
+@media (max-width: 600px) {
+    .missions {
+        grid-template-columns: 1fr; /* 1 colonne */
+    }
+}
 .mission-front img {
     width: 50px;
     height: 50px;
