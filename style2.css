@@ -182,6 +182,18 @@ h2 {
     /* color: #8B4513; /* Couleur de l'icône */ */
     margin: auto; /* Centre l'icône */
 }
+	
+.mission-front i.fa-clock{
+    font-size: 40px; /* Ajuste cette valeur pour changer la taille de l'icône */
+    /* color: #8B4513; /* Couleur de l'icône */ */
+    margin: auto; /* Centre l'icône */
+}
+		
+.mission-front i.fa-handshake{
+    font-size: 40px; /* Ajuste cette valeur pour changer la taille de l'icône */
+    /* color: #8B4513; /* Couleur de l'icône */ */
+    margin: auto; /* Centre l'icône */
+}
 				
 .mission img {
     width: 30px;
@@ -214,6 +226,10 @@ h2 {
     font-size: 18px;
 }
 
+.emails a {
+    color: #8B4513; /* Texte en blanc */
+}
+
 .carte {
     text-align: center; /* Centre le contenu horizontalement */
 }
@@ -225,3 +241,36 @@ h2 {
 	border-radius: 5%; /* Transforme l'image en cercle */
 }
 
+/* Style de la modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Désactive le retournement pour la carte avec le texte long */
+.mission-longue .mission-card {
+    transform: none !important;
+    -webkit-transform: none !important;
+}
