@@ -124,4 +124,16 @@
 		
     </div>
 </body>
+<script>
+    // Sélectionne toutes les cartes de mission
+    const missionCards = document.querySelectorAll('.mission-card');
+
+    // Ajoute un événement de clic/touch à chaque carte
+    missionCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.style.transform = this.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+        });
+    });
+</script>
+
 </html>
