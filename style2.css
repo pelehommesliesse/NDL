@@ -86,6 +86,12 @@ h2 {
     height: 300px; /* Ajuste cette hauteur selon tes besoins */
 }
 
+/* Style pour les smartphones */
+@media (max-width: 600px) {
+    .mission {
+        height: 500px;
+    }
+	
 /* Carte de mission */
 .mission-card {
     width: 100%;
