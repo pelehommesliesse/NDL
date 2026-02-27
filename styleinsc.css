@@ -1,3 +1,7 @@
+*, *::before, *::after{
+  box-sizing:border-box;
+}
+
 body{
   font-family: 'EB Garamond', serif;
   background:#f6f4ef;
@@ -95,4 +99,29 @@ input:focus, select:focus{
 
 .btn:hover{
   background:#8b6a3f;
+}
+
+.checkbox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+  cursor:pointer;
+}
+
+.checkbox input[type="checkbox"]{
+  width:auto;
+  margin:0;
+  transform:scale(1.2);
+}
+
+textarea{
+  width:100%;
+  padding:12px;
+  margin-top:5px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  font-size:13px;
+  resize:vertical;
+  min-height:120px;
 }

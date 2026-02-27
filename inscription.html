@@ -15,6 +15,8 @@
 
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSfsMtgXoadCMK9GfAxzO4ZfUf0HqOm_z9epkNW_Xv6ycSLLpw/formResponse" method="POST">
 
+    <!-- ================= COORDONNÉES ================= -->
+
     <div class="card">
       <h2>Vos coordonnées</h2>
 
@@ -31,15 +33,18 @@
       <input type="text" name="entry.498310300">
     </div>
 
+    <!-- ================= INSCRIPTION ================= -->
+
     <div class="card">
       <h2>Votre inscription</h2>
 
-      <label class="radio">
-        <input type="radio" name="choix" value="existant" onclick="showOption('existant')">
-        <span>Je souhaite rejoindre un chapitre existant</span>
+      <input type="hidden" id="chapitre_existant" name="entry.1763880818" value="-">
+      <label class="checkbox">
+        <input type="checkbox" onclick="selectOption('inscription','existant')">
+        Je souhaite rejoindre un chapitre existant
       </label>
 
-      <div id="existant" class="option">
+      <div id="existant" class="option option-inscription">
         <select name="entry.1027741431">
           <option value="">Choisir un chapitre</option>
           <option>Amiens</option>
@@ -47,28 +52,55 @@
           <option>Soissons</option>
           <option>Saint-Quentin</option>
         </select>
-        <input type="hidden" name="entry.1763880818" value="Oui">
       </div>
 
-      <label class="radio">
-        <input type="radio" name="choix" value="autre" onclick="showOption('autre')">
-        <span>Les chapitres actuels sont trop loin de mon domicile, peut-être un nouveau chapitre sera créé vers</span>
+
+      <input type="hidden" id="chapitre_autre" name="entry.1825981147" value="-">
+      <label class="checkbox">
+        <input type="checkbox" onclick="selectOption('inscription','autre')">
+        Les chapitres existants sont trop loin de mon domicile
       </label>
 
-      <div id="autre" class="option">
-        <input type="text" name="entry.1985455406" placeholder="Votre ville">
-        <input type="hidden" name="entry.1825981147" value="Oui">
+      <div id="autre" class="option option-inscription">
+        <input type="text" name="entry.1985455406" placeholder="Ma ville (n'hésitez pas à nous contacter ou à vérifier la carte des chapitres)">
       </div>
 
-      <label class="radio">
-        <input type="radio" name="choix" value="nouveau" onclick="showOption('nouveau')">
-        <span>Je souhaite me lancer dans la grande aventure et créer un nouveau chapitre</span>
+
+      <input type="hidden" id="chapitre_nouveau" name="entry.562928516" value="-">
+      <label class="checkbox">
+        <input type="checkbox" onclick="selectOption('inscription','nouveau')">
+        Je souhaite créer un nouveau chapitre
       </label>
 
-      <div id="nouveau" class="option">
-        <input type="text" name="entry.981341244" placeholder="Lieu du chapitre">
-        <input type="hidden" name="entry.562928516" value="Oui">
+      <div id="nouveau" class="option option-inscription">
+        <input type="text" name="entry.981341244" placeholder="Ville de ce nouveau chapitre">
       </div>
+
+    </div>
+
+    <!-- ================= UN PEU PLUS ================= -->
+
+    <div class="card">
+      <h2>Un peu plus...</h2>
+
+      <input type="hidden" id="orga_hidden" name="entry.1628028166" value="-">
+      <label class="checkbox">
+        <input type="checkbox" onclick="toggleSimple('orga')">
+        Je souhaite rejoindre l'équipe d'organisation
+      </label>
+
+      <div id="orga" class="option">
+        <select name="entry.1706254030">
+          <option value="">Je suis disponible...</option>
+          <option>dès à présent</option>
+          <option>à préparer le site en amont</option>
+          <option>sur place le week-end</option>
+        </select>
+      </div>
+
+      <label style="margin-top:20px;">Commentaire</label>
+      <!-- <input type="text" name="entry.901213388" placeholder="Votre message"> -->
+	  <textarea name="entry.901213388" placeholder="Votre message"></textarea>
 
     </div>
 
@@ -78,9 +110,35 @@
 </div>
 
 <script>
-function showOption(id){
-  document.querySelectorAll('.option').forEach(el=>el.style.display='none');
+function selectOption(group, id){
+
+  const options = ['existant','autre','nouveau'];
+
+  options.forEach(opt=>{
+    document.getElementById(opt).style.display='none';
+    document.getElementById('chapitre_'+opt).value='-';
+  });
+
+  const checkboxList = document.querySelectorAll('.option-'+group)
+  document.querySelectorAll('.checkbox input').forEach(cb=>cb.checked=false);
+
   document.getElementById(id).style.display='block';
+  document.getElementById('chapitre_'+id).value='Oui';
+
+  event.target.checked=true;
+}
+
+function toggleSimple(id){
+  const block = document.getElementById(id);
+  const hidden = document.getElementById(id+'_hidden');
+
+  if(block.style.display === "block"){
+    block.style.display="none";
+    hidden.value="-";
+  }else{
+    block.style.display="block";
+    hidden.value="Oui";
+  }
 }
 </script>
 
