@@ -296,6 +296,12 @@ h2 {
     margin: 20px 0;
 }
 
+.info-text a {
+    color: #8B4513 !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
 .thumbnail {
     width: 100px;
     height: auto;
