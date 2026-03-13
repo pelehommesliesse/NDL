@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pèlerinage des Hommes à Notre-Dame de Liesse</title>
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="affiche">
+        <h1>PÈLERINAGE DES HOMMES<br>À NOTRE-DAME DE LIESSE</h1>
+		<img src="images/news2.gif" class="imagcenter" >
+		<br>
+		<div class="info-container">
+			<!-- Une info -->
+			<div class="info">
+				<div class="date">13 mars 2026</div>
+				<div class="info-text">
+					<p>Voici une information importante concernant le pèlerinage. Vous pouvez cliquer sur l'image pour l'agrandir et la télécharger.</p>
+				</div>
+				<div class="image-container">
+					<img src="images/affiche-pele-de-peres-master_A6.png" class="thumbnail" alt="Vignette">
+				</div>
+				<div class="separator"></div>
+			</div>
+
+			<!-- Ajoute d'autres infos ici -->
+		</div>
+
+		<!-- Modale pour afficher l'image agrandie -->
+		<div id="image-modal" class="modalimage">
+			<span class="close-modalimage">&times;</span>
+			<img class="modalimage-content" id="modal-image">
+			<a id="download-link" class="downloadimage-button" download>Télécharger l'image</a>
+		</div>
+
+		<div class="contact">
+            <div class="lien-direct">
+                <a href="./index.html">Retour &nbsp&nbsp<i class="fa-solid fa-arrow-pointer"></i></a>
+            </div>
+        </div>
+
+	</div>
+	
+<script>
+
+// Sélection des éléments
+const thumbnails = document.querySelectorAll('.thumbnail');
+const modal = document.querySelector('.modalimage');
+const modalImg = document.querySelector('.modalimage-content');
+const closeModal = document.querySelector('.close-modalimage');
+const downloadLink = document.querySelector('#download-link');
+
+// Ouvrir la modale
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', function() {
+
+        modal.style.display = 'flex';
+
+        modalImg.src = this.src;
+
+        // met le bon lien de téléchargement
+        downloadLink.href = this.src;
+
+        // nom du fichier
+        const fileName = this.src.split('/').pop();
+        downloadLink.setAttribute("download", fileName);
+
+    });
+});
+
+// Fonction fermeture
+function closeImageModal() {
+    modal.style.display = 'none';
+}
+
+// fermer avec la croix
+closeModal.addEventListener('click', closeImageModal);
+
+// fermer si clic sur le fond
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        closeImageModal();
+    }
+});
+
+// fermer si clic sur image
+modalImg.addEventListener('click', closeImageModal);
+
+// fermer avec la touche Echap
+document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape") {
+        closeImageModal();
+    }
+});
+</script>
+</body>
+</html>
