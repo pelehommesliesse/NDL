@@ -165,6 +165,14 @@ h2 {
     font-size: 14px;
 }
 
+.mission-back a:hover {
+    color: #8B4513;   /* reste marron au survol */
+}
+
+.mission-back a:visited {
+    color: #8B4513;   /* reste marron même après clic */
+}
+
 .mission-front i.fa-address-card {
     font-size: 40px; /* Ajuste cette valeur pour changer la taille de l'icône */
     /* color: #8B4513; /* Couleur de l'icône */ */
