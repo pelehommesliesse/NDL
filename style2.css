@@ -165,6 +165,11 @@ h2 {
     font-size: 14px;
 }
 
+.mission-back a {
+    color: #8B4513;   /* marron */
+    font-weight: bold;
+}
+
 .mission-back a:hover {
     color: #8B4513;   /* reste marron au survol */
 }
